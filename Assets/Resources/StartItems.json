@@ -1,0 +1,29 @@
+{
+	"startItems":
+	[
+		{
+			"itemID":"IT003",
+			"amount":21
+		},
+		{
+			"itemID":"IT013",
+			"amount":22
+		},
+		{
+			"itemID":"IT002",
+			"amount":23
+		},
+		{
+			"itemID":"IT004",
+			"amount":24
+		},
+		{
+			"itemID":"IT012",
+			"amount":25
+		},
+		{
+			"itemID":"IT008",
+			"amount":26
+		},
+	]
+}

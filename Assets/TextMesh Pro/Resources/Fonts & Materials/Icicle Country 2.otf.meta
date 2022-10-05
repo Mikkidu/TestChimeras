@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 098361dc45763fc4f9a8c647779302c2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Icicle Country Two
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2d06b9ee6c23caf4e9d6e7bfffc31e59, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
