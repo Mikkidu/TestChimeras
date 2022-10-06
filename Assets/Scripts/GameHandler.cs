@@ -1,10 +1,11 @@
 using System.IO;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
+    ArrayItemData loadedItemdata;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,19 +13,29 @@ public class GameHandler : MonoBehaviour
         //File.WriteAllText(Application.dataPath + "Resorces\StartItems.json");
         TextAsset jsonItemData = Resources.Load<TextAsset>("StartItems");
         //string jsonItemData = File.ReadAllText(Application.dataPath + "/Resources/StartItems.json");
-        Debug.Log(jsonItemData);
-        ItemData loadedItemdata = JsonUtility.FromJson<ItemData>(jsonItemData.text);
-        Debug.Log($"ItemID: {loadedItemdata.itemID}");
-        Debug.Log($"Amount: {loadedItemdata.amount}");
+        //Debug.Log(jsonItemData);
+        loadedItemdata = JsonUtility.FromJson<ArrayItemData>(jsonItemData.text);
+        
+        //Debug.Log($"GameHandler: {Inventory.instance.items.Count}");
     }
 
-    public class ItemData
+    public void FillInventory()
+    {
+        Debug.Log($"GameHandler: Fill");
+        foreach (ItemData item in loadedItemdata.startItems)
+        {
+            Inventory.instance.Add(item.itemID, item.amount);
+        }
+    }
+    
+    [Serializable]
+    class ItemData
     {
         public string itemID;
         public int amount;
     }
-
-    public class ArrayItemData
+    [Serializable]
+    class ArrayItemData
     {
         public List<ItemData> startItems;
     }

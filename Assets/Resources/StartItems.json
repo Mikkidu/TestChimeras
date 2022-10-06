@@ -1,6 +1,5 @@
 {
-	"startItems":
-	[
+	"startItems": [
 		{
 			"itemID":"IT003",
 			"amount":21
@@ -24,6 +23,6 @@
 		{
 			"itemID":"IT008",
 			"amount":26
-		},
+		}
 	]
 }

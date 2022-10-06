@@ -5,17 +5,30 @@ public class InventorySlot : MonoBehaviour
 {
     public Image icon;
     Item item;
+    public Text textAmount;
+    public string slotItemID;
 
-    public void AddItem(Item newItem)
+    public void AddItem(string itemID, int amount)
     {
-        item = newItem;
+        textAmount.text = amount.ToString();
+        Debug.Log($"InventorySlot: {itemID}, {amount}");
+        textAmount.enabled = true;
+        textAmount.transform.parent.gameObject.GetComponent<Image>().enabled = true;
 
-        icon.sprite = item.icon;
+        slotItemID = itemID;
+
+        icon.sprite = Database.GetSpriteByID(itemID);
         icon.enabled = true;
     }
+
+
     public void ClearSlot()
     {
-        item = null;
+        textAmount.text = null;
+        textAmount.enabled = false;
+        textAmount.transform.parent.gameObject.GetComponent<Image>().enabled = false;
+
+        slotItemID = null;
 
         icon.sprite = null;
         icon.enabled = false;
