@@ -24,7 +24,7 @@ public class Database : MonoBehaviour
 
     public static Item GetItemByID(string itemID)
     {
-        Debug.Log($"database: {itemID}");
+        //Debug.Log($"database: {itemID}");
         return instance.items.allItems.FirstOrDefault(i => i.itemID == itemID);
     }
 

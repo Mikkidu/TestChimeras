@@ -147,7 +147,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2855745333337315318}
   - component: {fileID: 2855745333337315316}
-  - component: {fileID: 2855745333337315317}
   - component: {fileID: 2855745333337315315}
   m_Layer: 5
   m_Name: Ingredients
@@ -189,36 +188,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2855745333337315319}
   m_CullTransparentMesh: 1
---- !u!114 &2855745333337315317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2855745333337315319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &2855745333337315315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,6 +1197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2660805414947290848}
   - component: {fileID: 7298204284171228081}
+  - component: {fileID: 6075080607579682687}
   m_Layer: 5
   m_Name: TableItemSpace
   m_TagString: Untagged
@@ -1264,6 +1234,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7754372840943167143}
   m_CullTransparentMesh: 1
+--- !u!114 &6075080607579682687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754372840943167143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da00bf5a85947624e879bf5ddab2c95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeIcon: {fileID: 6806566191905799140}
 --- !u!1001 &2855745333924728876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1507,6 +1490,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0e38ddd250b4d4786d8c1734176a24, type: 3}
+--- !u!114 &6806566191905799140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8778750029500997782, guid: 2f0e38ddd250b4d4786d8c1734176a24, type: 3}
+  m_PrefabInstance: {fileID: 2855745334383025010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e680bbca11c064459af3215f943c7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6982593927668637319 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5135947932366538229, guid: 2f0e38ddd250b4d4786d8c1734176a24, type: 3}

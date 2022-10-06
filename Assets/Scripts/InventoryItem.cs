@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Класс предметов в инвентаре
-class InventoryItem
+public class InventoryItem
     {
         public string itemID;
         public int amount;

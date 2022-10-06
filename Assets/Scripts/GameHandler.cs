@@ -5,6 +5,21 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
+    #region Singleton
+    public static GameHandler instance;
+    
+    void Awake()
+    {
+        if (instance !=null)
+        {
+            Debug.LogWarning("Найено больше одного примера загрузчика");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
+
     ArrayItemData loadedItemdata;
     // Start is called before the first frame update
     void Start()
@@ -21,12 +36,19 @@ public class GameHandler : MonoBehaviour
 
     public void FillInventory()
     {
-        Debug.Log($"GameHandler: Fill");
+        //Debug.Log($"GameHandler: Fill");
         foreach (ItemData item in loadedItemdata.startItems)
         {
             Inventory.instance.Add(item.itemID, item.amount);
         }
     }
+    // public List<Recipe> FillRecipes()
+    // {
+    //     TextAsset jsonRecipesData = Resources.Load<TextAsset>("Recipes");
+    //     ArrayRecipeData loadedRecipeData = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text);
+    //     Debug.Log($"GameHandler: {jsonRecipesData}");
+    //     return loadedRecipeData.recipesList;
+    // }
     
     [Serializable]
     class ItemData
@@ -39,5 +61,13 @@ public class GameHandler : MonoBehaviour
     {
         public List<ItemData> startItems;
     }
+
+    // [Serializable]
+    // public class ArrayRecipeData
+    // {
+    //     public List<Recipe> recipesList;
+    // }
+    
+
 
 }

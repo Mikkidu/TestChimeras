@@ -4,14 +4,13 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     public Image icon;
-    Item item;
     public Text textAmount;
     public string slotItemID;
 
     public void AddItem(string itemID, int amount)
     {
         textAmount.text = amount.ToString();
-        Debug.Log($"InventorySlot: {itemID}, {amount}");
+        //Debug.Log($"InventorySlot: {itemID}, {amount}");
         textAmount.enabled = true;
         textAmount.transform.parent.gameObject.GetComponent<Image>().enabled = true;
 
@@ -19,6 +18,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = Database.GetSpriteByID(itemID);
         icon.enabled = true;
+        Debug.Log($"InventorySLot: {itemID}");
     }
 
 

@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
     //Добавление в инвентарь
     public void Add(string itemID, int amount)
     {
-        Debug.Log($"Inventory: {itemID}");
+        //Debug.Log($"Inventory: {itemID}");
         if (items.FirstOrDefault(i => i.itemID == itemID) != null)
         {
              items.FirstOrDefault(i => i.itemID == itemID).amount += amount;
@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour
     //Выдаёт количество по ID, ели нет предмета - 0
     public int GetAmountByID(string itemID)
     {
-        Debug.Log($"Inventory: {itemID}, {items.FirstOrDefault(i => i.itemID == itemID).amount}");
+        //Debug.Log($"Inventory: {itemID}, {items.FirstOrDefault(i => i.itemID == itemID).amount}");
         if (!CheckItemByID(itemID)) return 0;
         else return items.FirstOrDefault(i => i.itemID == itemID).amount;
     }

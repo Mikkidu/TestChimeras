@@ -1,0 +1,110 @@
+{
+    "recipesList":
+    [
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "itemID":"IT009",
+            "price":750,
+            "Ingredients":
+            [
+                {
+                    "itemID":"IT013",
+                    "amount": 1
+                },
+                {
+                    "itemID":"IT001",
+                    "amount": 3
+                }
+            ]
+        }
+    ]
+}
