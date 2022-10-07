@@ -17,7 +17,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = Database.GetSpriteByID(itemID);
         icon.enabled = true;
-        Debug.Log($"InventorySLot: {itemID}");
+        //Debug.Log($"InventorySLot: {itemID}");
     }
 
     //Очищаем слот инвентаря

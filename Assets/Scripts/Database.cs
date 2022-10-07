@@ -32,4 +32,8 @@ public class Database : MonoBehaviour
     {
         return instance.items.allItems.FirstOrDefault(i => i.itemID == itemID).icon;
     }
+    public static string GetNameByID(string itemID)
+    {
+        return instance.items.allItems.FirstOrDefault(i => i.itemID == itemID).name;
+    }
 }

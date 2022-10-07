@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //Класс предметов в инвентаре
+[Serializable]
 public class InventoryItem
     {
         public string itemID;

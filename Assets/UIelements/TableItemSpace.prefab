@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Scarlet extract
-
-'
+  m_text: not indetified
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24ae49a864e0e974197443a863a87626, type: 2}
   m_sharedMaterial: {fileID: 2578263677236767473, guid: 24ae49a864e0e974197443a863a87626, type: 2}
@@ -1247,6 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeIcon: {fileID: 6806566191905799140}
+  recipeName: {fileID: 2855745333162698404}
 --- !u!1001 &2855745333924728876
 PrefabInstance:
   m_ObjectHideFlags: 0

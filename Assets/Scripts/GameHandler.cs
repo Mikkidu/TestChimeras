@@ -38,13 +38,15 @@ public class GameHandler : MonoBehaviour
         }
     }
     //для списка рецептов не удался парс
-    // public List<Recipe> FillRecipes()
-    // {
-    //     TextAsset jsonRecipesData = Resources.Load<TextAsset>("Recipes");
-    //     ArrayRecipeData loadedRecipeData = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text);
-    //     Debug.Log($"GameHandler: {jsonRecipesData}");
-    //     return loadedRecipeData.recipesList;
-    // }
+    public List<Recipe> ParsRecipes()
+    {
+        TextAsset jsonRecipesData = Resources.Load<TextAsset>("Recipes");
+        //ArrayRecipeData loadedRecipeData = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text);
+        //List<Recipe> recipesList = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text).recipesList;
+        Debug.Log($"GameHandler: {jsonRecipesData}");
+        return JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text).recipesList;
+    }
+    
     
     [Serializable]
     class ItemData
@@ -56,6 +58,11 @@ public class GameHandler : MonoBehaviour
     class ArrayItemData
     {
         public List<ItemData> startItems;
+    }
+    [Serializable]
+    public class ArrayRecipeData
+    {
+        public List<Recipe> recipesList;
     }
 
     // [Serializable]
