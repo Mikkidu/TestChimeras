@@ -14,6 +14,8 @@ public class AlchemyUI : MonoBehaviour
     RecipeSlot[] slots;
     void Start()
     {
+        //парсим json 
+        //что-то здесь у меня не получилось в свой класс засунуть json с вложенными списками
         TextAsset jsonRecipesData = Resources.Load<TextAsset>("Recipes");
         ArrayRecipeData loadedRecipeData = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text);
         Debug.Log($"GameHandler: {jsonRecipesData}");
@@ -25,11 +27,12 @@ public class AlchemyUI : MonoBehaviour
     }
 
  
-    
-    public void OnRemoveButton ()
+    //Открытие-закрытие окна Алхимии
+    public void showCloseAlchemyWindow ()
     {
         alchemyWindow.SetActive(!alchemyWindow.activeSelf);
     }
+    //Заполнение полей рецептов (заготовка)
     public void FillRecipesUI()
     {
         slots = recipesParent.GetComponentsInChildren<RecipeSlot>();
@@ -45,9 +48,8 @@ public class AlchemyUI : MonoBehaviour
            //     slots[i].ClearSlot();
             }
         }
-        //Debug.Log("UPDATING UI");
     }
-    
+    //Не разобраля до конца с Serializable
     [Serializable]
     public class ArrayRecipeData
     {

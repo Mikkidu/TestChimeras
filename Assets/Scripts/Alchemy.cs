@@ -20,12 +20,12 @@ public class Alchemy : MonoBehaviour
 
     
     List<Recipe> recipesList;
-
+    //Принимаем список рецептов для хранения
     public void FillRecipes(List<Recipe> newRecipesList)
     {
         recipesList = newRecipesList;
     }
-
+    //Выдаём список рецептов
     public List<Recipe> GetRecipes()
     {
         return recipesList;

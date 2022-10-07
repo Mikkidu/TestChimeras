@@ -7,7 +7,7 @@ public class RecipeSlot : MonoBehaviour
 {
     Recipe recipe;
     public InventorySlot recipeIcon;
-
+    
     public void Add(string itemID, int amount)
     {
         recipe.itemID = itemID;

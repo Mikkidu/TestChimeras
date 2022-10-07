@@ -6,11 +6,10 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
     public Text textAmount;
     public string slotItemID;
-
+    //Заполняем слот инвентаря
     public void AddItem(string itemID, int amount)
     {
         textAmount.text = amount.ToString();
-        //Debug.Log($"InventorySlot: {itemID}, {amount}");
         textAmount.enabled = true;
         textAmount.transform.parent.gameObject.GetComponent<Image>().enabled = true;
 
@@ -21,7 +20,7 @@ public class InventorySlot : MonoBehaviour
         Debug.Log($"InventorySLot: {itemID}");
     }
 
-
+    //Очищаем слот инвентаря
     public void ClearSlot()
     {
         textAmount.text = null;

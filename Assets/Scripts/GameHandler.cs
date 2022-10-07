@@ -1,4 +1,3 @@
-using System.IO;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,19 +20,15 @@ public class GameHandler : MonoBehaviour
 
 
     ArrayItemData loadedItemdata;
-    // Start is called before the first frame update
+    //Для инвентаря сбор информации удался
     void Start()
     {
-        //ItemData loaadedItemdata = JsonUtility.FromJson<ItemData>(json);
-        //File.WriteAllText(Application.dataPath + "Resorces\StartItems.json");
         TextAsset jsonItemData = Resources.Load<TextAsset>("StartItems");
-        //string jsonItemData = File.ReadAllText(Application.dataPath + "/Resources/StartItems.json");
-        //Debug.Log(jsonItemData);
+
         loadedItemdata = JsonUtility.FromJson<ArrayItemData>(jsonItemData.text);
         
-        //Debug.Log($"GameHandler: {Inventory.instance.items.Count}");
     }
-
+    //передаём стартовые предметы в инвентарь
     public void FillInventory()
     {
         //Debug.Log($"GameHandler: Fill");
@@ -42,6 +37,7 @@ public class GameHandler : MonoBehaviour
             Inventory.instance.Add(item.itemID, item.amount);
         }
     }
+    //для списка рецептов не удался парс
     // public List<Recipe> FillRecipes()
     // {
     //     TextAsset jsonRecipesData = Resources.Load<TextAsset>("Recipes");

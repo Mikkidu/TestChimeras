@@ -15,20 +15,18 @@ public class InventoryUI : MonoBehaviour
         inventory.OnItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        
-        Debug.Log($"InventoryUI: {slots.Length}");
     }
     
-    // Update is called once per frame
     void Update()
     {
+        //Костыль. запускаем заполнение инвентаря после старта
         if (i)
         {
             i = false;
             gaha.GetComponent<GameHandler>().FillInventory();
         }
     }
-
+    //Обновляем поля инвентаря каждый раз при изменении состава файла инвентаря
     void UpdateUI()
     {
         string[] itemsID = inventory.GetItemsID();
@@ -43,6 +41,5 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
-        //Debug.Log("UPDATING UI");
     }
 }
