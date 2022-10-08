@@ -7,42 +7,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class AlchemyUI : MonoBehaviour
 {
-   
-    public Transform recipesParent; 
-    public GameObject alchemyWindow;
-    private List<Recipe> recipesList;
-    public Recipe recipe;
-    public Button alchemyButton;
-    RecipeSlot[] slots;
-    void Start()
-    {
-        
-    }
+    public GameObject alchemyWindow, alchemyWindowAsset;
+    
     //Открытие-закрытие окна Алхимии
-    public void showCloseAlchemyWindow ()
+    public void ShowAlchemyWindow()
     {
-        alchemyWindow.SetActive(!alchemyWindow.activeSelf);
-        recipesList = GameHandler.instance.ParsRecipes();
-        FillRecipesUI();
+        if (alchemyWindow == null)
+        {
+            alchemyWindow = Instantiate(alchemyWindowAsset, transform);
+        }
+        alchemyWindow.SetActive(true);
+        alchemyWindow.GetComponent<AlchemyWindowUI>().FillRecipesUI();
     }
-    //Заполнение полей рецептов (заготовка)
-    public void FillRecipesUI()
-    {
-        slots = recipesParent.GetComponentsInChildren<RecipeSlot>();
-        Debug.Log($"Alchemy Fill: {recipesList[0].itemID}");
-        slots[0].Add(recipesList[0]);
-        // for (int i = 0; i < slots.Length; i++)
-        // {
-        //     if (i < recipesList.Count)
-        //     {
-        //         slots[i].Add(recipesList[i].itemID, recipesList[i].amount);
-        //         Debug.Log($"Alchemy: {recipesList[i].itemID}");
-        //     }
-        //     else
-        //     {
-        //    //     slots[i].ClearSlot();
-        //     }
-        // }
-    }
+
 
 }

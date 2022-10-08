@@ -41,9 +41,6 @@ public class GameHandler : MonoBehaviour
     public List<Recipe> ParsRecipes()
     {
         TextAsset jsonRecipesData = Resources.Load<TextAsset>("Recipes");
-        //ArrayRecipeData loadedRecipeData = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text);
-        //List<Recipe> recipesList = JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text).recipesList;
-        Debug.Log($"GameHandler: {jsonRecipesData}");
         return JsonUtility.FromJson<ArrayRecipeData>(jsonRecipesData.text).recipesList;
     }
     
@@ -65,11 +62,6 @@ public class GameHandler : MonoBehaviour
         public List<Recipe> recipesList;
     }
 
-    // [Serializable]
-    // public class ArrayRecipeData
-    // {
-    //     public List<Recipe> recipesList;
-    // }
     
 
 

@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
     //Расходование предметов
     public void Spend(string itemID, int amount)
     {
-        items.FirstOrDefault(i => i.itemID == itemID).amount += amount;
+        items.FirstOrDefault(i => i.itemID == itemID).amount -= amount;
         if (items.FirstOrDefault(i => i.itemID == itemID).amount < 1)
         {
             items.RemoveAll(i => i.itemID == itemID);

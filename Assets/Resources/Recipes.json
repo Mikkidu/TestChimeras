@@ -12,13 +12,68 @@
             "ingredient3amount":0
         },
         {
-            "itemID":"IT009",
-            "amount":1,
-            "price":750,
-            "ingredient1ItemID":"IT013",
+            "itemID":"IT001",
+            "amount":3,
+            "price":200,
+            "ingredient1ItemID":"IT012",
+            "ingredient1amount":3,
+            "ingredient2ItemID":"IT005",
+            "ingredient2amount":1,
+            "ingredient3ItemID":"IT010",
+            "ingredient3amount":2
+        },
+        {
+            "itemID":"IT011",
+            "amount":5,
+            "price":500,
+            "ingredient1ItemID":"IT010",
             "ingredient1amount":1,
-            "ingredient2ItemID":"IT001",
+            "ingredient2ItemID":"IT002",
+            "ingredient2amount":5,
+            "ingredient3ItemID":"IT006",
+            "ingredient3amount":2
+        },
+        {
+            "itemID":"IT007",
+            "amount":1,
+            "price":500,
+            "ingredient1ItemID":"IT003",
+            "ingredient1amount":1,
+            "ingredient2ItemID":"IT011",
             "ingredient2amount":3,
+            "ingredient3ItemID":"",
+            "ingredient3amount":0
+        },
+        {
+            "itemID":"IT010",
+            "amount":2,
+            "price":750,
+            "ingredient1ItemID":"IT012",
+            "ingredient1amount":2,
+            "ingredient2ItemID":"IT005",
+            "ingredient2amount":5,
+            "ingredient3ItemID":"",
+            "ingredient3amount":0
+        },
+        {
+            "itemID":"IT005",
+            "amount":1,
+            "price":100,
+            "ingredient1ItemID":"IT008",
+            "ingredient1amount":2,
+            "ingredient2ItemID":"IT003",
+            "ingredient2amount":3,
+            "ingredient3ItemID":"IT004",
+            "ingredient3amount":1
+        },
+        {
+            "itemID":"IT006",
+            "amount":5,
+            "price":750,
+            "ingredient1ItemID":"IT003",
+            "ingredient1amount":2,
+            "ingredient2ItemID":"IT010",
+            "ingredient2amount":1,
             "ingredient3ItemID":"",
             "ingredient3amount":0
         }

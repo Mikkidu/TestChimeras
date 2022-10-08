@@ -6,9 +6,13 @@ using TMPro;
 
 public class RecipeSlot : MonoBehaviour
 {
-    Recipe recipe;
+    Recipe slotRecipe;
     public InventorySlot recipeIcon;
-    public GameObject recipeName, createPrice, recipeItems;
+    public IngredientSlot[] ingredients;
+    public GameObject secondPlus;
+    public Button createButton;
+    public TMP_Text textPrice, recipeName;
+    int numbIngredients;
     void Start()
     {
        
@@ -16,11 +20,58 @@ public class RecipeSlot : MonoBehaviour
     
     public void Add(Recipe recipe)
     {
-        this.recipe = recipe;
-        Debug.Log($"RecipeSlot: {recipe.amount}");
-        //recipe.itemID = itemID;
-        recipeIcon.AddItem(recipe.itemID, recipe.amount);
-        recipeName.GetComponent<TMP_Text>().text = Database.GetNameByID(recipe.itemID);
-        Debug.Log($"RecipeSlot: {recipe.itemID}");
+        slotRecipe = recipe;
+
+        recipeIcon.AddItem(slotRecipe.itemID, slotRecipe.amount);
+
+        recipeName.text = Database.GetNameByID(slotRecipe.itemID);
+
+        textPrice.text = slotRecipe.price.ToString();
+
+        ingredients[0].GetComponent<IngredientSlot>().AddItem(slotRecipe.ingredient1ItemID, slotRecipe.ingredient1amount);
+        ingredients[1].GetComponent<IngredientSlot>().AddItem(slotRecipe.ingredient2ItemID, slotRecipe.ingredient2amount);
+        
+        if (slotRecipe.ingredient3ItemID == "")
+        {
+            ingredients[2].gameObject.SetActive(false);
+            secondPlus.SetActive(false);
+            numbIngredients = 2;
+        } 
+        else
+        {
+            ingredients[2].GetComponent<IngredientSlot>().AddItem(slotRecipe.ingredient3ItemID, slotRecipe.ingredient3amount);
+            numbIngredients = 3;
+        }
+        createButton.interactable = CheckAmountRecipe();
+    }
+
+    public void RefreshRecipe()
+    {
+        for (int i = 0; i < numbIngredients; i++)
+        {
+            ingredients[i].RefreshSlot();
+        }
+        createButton.interactable = CheckAmountRecipe();
+    }
+
+    public bool CheckAmountRecipe()
+    {
+        for (int i = 0; i < numbIngredients; i++)
+        {
+            Debug.Log(!ingredients[i].CheckAmountIngredient());
+            if (!ingredients[i].CheckAmountIngredient())
+            {
+                return false;
+            } 
+        }
+        return true;
+    }
+    public void CreateButton()
+    {
+        Inventory.instance.Add(slotRecipe.itemID, slotRecipe.amount);
+        for (int i = 0; i < numbIngredients; i++)
+        {
+            Inventory.instance.Spend(ingredients[i].slotItemID, ingredients[i].required);
+        }
     }
 }

@@ -732,31 +732,43 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.14117646, g: 0.29190648, b: 1, a: 0.5529412}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 6d434f3f907ee75499583d8d501b05e6, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: bbf0f3ecc4e90e041a85f9924ab971ed, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2855745334004609165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6075080607579682687}
+        m_TargetAssemblyTypeName: RecipeSlot, Assembly-CSharp
+        m_MethodName: CreateButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2855745334241284579
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +996,7 @@ GameObject:
   - component: {fileID: 2855745334958726841}
   - component: {fileID: 2855745334958726842}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1038,7 +1050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 28000
+  m_text: null
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24ae49a864e0e974197443a863a87626, type: 2}
   m_sharedMaterial: {fileID: 2578263677236767473, guid: 24ae49a864e0e974197443a863a87626, type: 2}
@@ -1245,7 +1257,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeIcon: {fileID: 6806566191905799140}
-  recipeName: {fileID: 2855745333162698404}
+  ingredients:
+  - {fileID: 5393307068686264029}
+  - {fileID: 2137469505731906045}
+  - {fileID: 2137469504711569291}
+  secondPlus: {fileID: 2855745333352633116}
+  createButton: {fileID: 2855745334004609166}
+  textPrice: {fileID: 2855745334958726842}
+  recipeName: {fileID: 2855745333162698402}
 --- !u!1001 &2855745333924728876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1348,6 +1367,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2653722877298994119, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
   m_PrefabInstance: {fileID: 2855745333924728876}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2137469504711569291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4181720281200476071, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
+  m_PrefabInstance: {fileID: 2855745333924728876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7246cb220cdc023429083e2f32c73383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2855745334383025010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1480,8 +1510,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5135947932857458618, guid: 2f0e38ddd250b4d4786d8c1734176a24, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135947932857458618, guid: 2f0e38ddd250b4d4786d8c1734176a24, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6676740362987323531, guid: 2f0e38ddd250b4d4786d8c1734176a24, type: 3}
       propertyPath: m_fontSize
@@ -1607,6 +1641,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2653722877298994119, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
   m_PrefabInstance: {fileID: 2855745334777312858}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2137469505731906045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4181720281200476071, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
+  m_PrefabInstance: {fileID: 2855745334777312858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7246cb220cdc023429083e2f32c73383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8129160349844101498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1614,6 +1659,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2855745333337315318}
     m_Modifications:
+    - target: {fileID: 1777361091481624563, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
+      propertyPath: m_text
+      value: null
+      objectReference: {fileID: 0}
     - target: {fileID: 2653722877298994119, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1704,6 +1753,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
+--- !u!114 &5393307068686264029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4181720281200476071, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
+  m_PrefabInstance: {fileID: 8129160349844101498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7246cb220cdc023429083e2f32c73383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6053821554190332605 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2653722877298994119, guid: d757951ce26cae742bc07c86fdd2a9e7, type: 3}
