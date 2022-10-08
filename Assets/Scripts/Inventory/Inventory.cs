@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -7,10 +6,10 @@ public class Inventory : MonoBehaviour
 {
     #region Singleton
     public static Inventory instance;
-    
+
     void Awake()
     {
-        if (instance !=null)
+        if (instance != null)
         {
             Debug.LogWarning("Найено больше одного примера инвентаря");
             return;
@@ -18,19 +17,20 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
     #endregion
-    
+
     //Сигнализирует об изенениях в инвентаре
     public delegate void OnItemChanged();
     public OnItemChanged OnItemChangedCallback;
     //Спсок предметов в инвентаре, доступ только через методы
     List<InventoryItem> items = new List<InventoryItem>();
+
+
     //Добавление в инвентарь
     public void Add(string itemID, int amount)
     {
-        //Debug.Log($"Inventory: {itemID}");
         if (items.FirstOrDefault(i => i.itemID == itemID) != null)
         {
-             items.FirstOrDefault(i => i.itemID == itemID).amount += amount;
+            items.FirstOrDefault(i => i.itemID == itemID).amount += amount;
         }
         else
         {
@@ -39,6 +39,7 @@ public class Inventory : MonoBehaviour
         if (OnItemChangedCallback != null)
             OnItemChangedCallback.Invoke();
     }
+
     //Расходование предметов
     public void Spend(string itemID, int amount)
     {
@@ -50,6 +51,7 @@ public class Inventory : MonoBehaviour
         if (OnItemChangedCallback != null)
             OnItemChangedCallback.Invoke();
     }
+
     //Выдаёт количество по ID, ели нет предмета - 0
     public int GetAmountByID(string itemID)
     {
@@ -60,10 +62,6 @@ public class Inventory : MonoBehaviour
     //Проверка наличия предмета
     public bool CheckItemByID(string itemID)
     {
-        for (int i = 0; i < 5; i++)
-        {
-            
-        }
         if (items.FirstOrDefault(i => i.itemID == itemID) == null)
         {
             return false;
@@ -72,7 +70,7 @@ public class Inventory : MonoBehaviour
         {
             return true;
         }
-        
+
     }
     //Выдаёт предметы двумерным списком
     public string[] GetItemsID()
@@ -84,5 +82,5 @@ public class Inventory : MonoBehaviour
         }
         return arrayID;
     }
-    
+
 }

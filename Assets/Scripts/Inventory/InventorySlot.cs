@@ -6,6 +6,7 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
     public Text textAmount;
     public string slotItemID;
+
     //Заполняем слот инвентаря
     public void AddItem(string itemID, int amount)
     {
@@ -17,7 +18,6 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = Database.GetSpriteByID(itemID);
         icon.enabled = true;
-        //Debug.Log($"InventorySLot: {itemID}");
     }
 
     //Очищаем слот инвентаря

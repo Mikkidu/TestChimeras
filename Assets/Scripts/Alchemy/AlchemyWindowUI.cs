@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,19 +8,18 @@ public class AlchemyWindowUI : MonoBehaviour
     public GameObject recipeAsset, tableRecipes;
     Inventory inventory;
 
+    //Реагируем на изменения в инвентаре
     void Start()
     {
         inventory = Inventory.instance;
         inventory.OnItemChangedCallback += RefreshAmount;
-
     }
-    
-       //Заполнение полей рецептов (заготовка)
+
+    //Заполнение списка рецептов
     public void FillRecipesUI()
     {
         recipesList = GameHandler.instance.ParsRecipes();
         slots = new RecipeSlot[recipesList.Count];
-        //slots[0].Add(recipesList[0]);
         for (int i = 0; i < recipesList.Count; i++)
         {
             slots[i] = Instantiate(recipeAsset, tableRecipes.transform).GetComponent<RecipeSlot>();
@@ -29,6 +27,7 @@ public class AlchemyWindowUI : MonoBehaviour
         }
     }
 
+    //ПРоверяем количество предметов
     public void RefreshAmount()
     {
         for (int i = 0; i < recipesList.Count; i++)
@@ -36,20 +35,20 @@ public class AlchemyWindowUI : MonoBehaviour
             slots[i].RefreshRecipe();
         }
     }
-
+    //Закрываем окно Алхимии
     public void CloseAlchemyWindow()
     {
         gameObject.SetActive(false);
         ClearAlchemyWindow();
     }
-
-        private void ClearAlchemyWindow()
+    //Очищаем окно алхимии
+    private void ClearAlchemyWindow()
     {
-         for (int i = 0; i < recipesList.Count; i++)
+        for (int i = 0; i < recipesList.Count; i++)
         {
             Destroy(slots[i].gameObject);
         }
-        Debug.Log("Destroing");
+        recipesList = null;
     }
 
 }
