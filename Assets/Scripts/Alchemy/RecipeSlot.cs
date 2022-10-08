@@ -55,7 +55,6 @@ public class RecipeSlot : MonoBehaviour
     {
         for (int i = 0; i < numbIngredients; i++)
         {
-            Debug.Log(!ingredients[i].CheckAmountIngredient());
             if (!ingredients[i].CheckAmountIngredient())
             {
                 return false;
