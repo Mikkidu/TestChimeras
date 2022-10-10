@@ -6,7 +6,6 @@ public class InventoryUI : MonoBehaviour
     Inventory inventory;
     InventorySlot[] slots;
     bool i = true;
-    public GameObject gaha;
     
     void Start()
     {
@@ -14,6 +13,8 @@ public class InventoryUI : MonoBehaviour
         inventory.OnItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+
     }
     
     void Update()
@@ -22,7 +23,7 @@ public class InventoryUI : MonoBehaviour
         if (i)
         {
             i = false;
-            gaha.GetComponent<GameHandler>().FillInventory();
+            GameHandler.instance.FillInventory();
         }
     }
     //Обновляем поля инвентаря каждый раз при изменении состава файла инвентаря

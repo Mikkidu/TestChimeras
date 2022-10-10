@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 7298204284171228081}
   - component: {fileID: 6075080607579682687}
   m_Layer: 5
-  m_Name: TableItemSpace
+  m_Name: TableItemPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

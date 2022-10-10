@@ -5,7 +5,7 @@ public class AlchemyWindowUI : MonoBehaviour
 {
     RecipeSlot[] slots;
     private List<Recipe> recipesList;
-    public GameObject recipeAsset, tableRecipes;
+    public GameObject tableRecipes;
     Inventory inventory;
 
     //Реагируем на изменения в инвентаре
@@ -18,16 +18,17 @@ public class AlchemyWindowUI : MonoBehaviour
     //Заполнение списка рецептов
     public void FillRecipesUI()
     {
+        GameObject recipePrefab = Resources.Load<GameObject>("TableItemPrefab");
         recipesList = GameHandler.instance.ParsRecipes();
         slots = new RecipeSlot[recipesList.Count];
         for (int i = 0; i < recipesList.Count; i++)
         {
-            slots[i] = Instantiate(recipeAsset, tableRecipes.transform).GetComponent<RecipeSlot>();
+            slots[i] = Instantiate(recipePrefab, tableRecipes.transform).GetComponent<RecipeSlot>();
             slots[i].Add(recipesList[i]);
         }
     }
 
-    //ПРоверяем количество предметов
+    //Проверяем количество предметов
     public void RefreshAmount()
     {
         for (int i = 0; i < recipesList.Count; i++)
